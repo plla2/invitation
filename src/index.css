@@ -7,7 +7,7 @@
   font-weight: 45 920;
   font-style: normal;
   font-display: swap;
-  src: url('/public/fonts/PretendardVariable.woff2') format('woff2-variations');
+  src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
 }
 
 @font-face {
@@ -15,7 +15,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('/public/fonts/GmarketSansTTFBold.ttf');
+  src: url('/fonts/GmarketSansTTFBold.ttf');
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url('/public/fonts/GmarketSansTTFMedium.ttf');
+  src: url('/fonts/GmarketSansTTFMedium.ttf');
 }
 
 @font-face {
@@ -31,7 +31,7 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: url('/public/fonts/GmarketSansTTFLight.ttf');
+  src: url('/fonts/GmarketSansTTFLight.ttf');
 }
 
 @font-face {
@@ -39,7 +39,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('/public/fonts/SometimesTimesTRIAL-Bold.otf');
+  src: url('/fonts/SometimesTimesTRIAL-Bold.otf');
 }
 
 @font-face {
@@ -47,7 +47,7 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url('/public/fonts/SometimesTimesTRIAL-Medium.otf');
+  src: url('/fonts/SometimesTimesTRIAL-Medium.otf');
 }
 
 @font-face {
@@ -55,7 +55,7 @@
   font-weight: 300;
   font-style: normal;
   font-display: swap;
-  src: url('/public/fonts/SometimesTimesTRIAL-Light.otf');
+  src: url('/fonts/SometimesTimesTRIAL-Light.otf');
 }
 
 *,
