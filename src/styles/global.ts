@@ -1,8 +1,17 @@
 export const colors = {
-  BLACK: '#191919',
-  WHITE: '#FEFEFE',
-  BACKGROUND: '#F8FAFC',
-  OUTSIDE: '#F6F4F0',
+  white: {
+    100: '#FEFEFE',
+    200: '#F8FAFC',
+    300: '#EFEFEF',
+  },
+  black: {
+    100: '#191919',
+  },
+
+  // BLACK: '#191919',
+  // WHITE: '#FEFEFE',
+  // BACKGROUND: '#F8FAFC',
+  // OUTSIDE: '#efefef',
 };
 
 export const weights = {

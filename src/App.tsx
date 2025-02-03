@@ -1,7 +1,12 @@
-import React from 'react';
+import { AppLayout } from '@/components/common/AppLayout';
+import Landing from '@/components/features/Landing';
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <AppLayout>
+      <Landing />
+    </AppLayout>
+  );
 };
 
 export default App;

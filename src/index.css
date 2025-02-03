@@ -1,16 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: Pretendard;
   font-weight: 45 920;
   font-style: normal;
   font-display: swap;
-  src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+  src: url('/public/fonts/PretendardVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: GmarketBold;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/public/fonts/GmarketSansTTFBold.ttf');
+}
+
+@font-face {
+  font-family: GmarketMedium;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/public/fonts/GmarketSansTTFMedium.ttf');
+}
+
+@font-face {
+  font-family: GmarketLight;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('/public/fonts/GmarketSansTTFLight.ttf');
+}
+
+@font-face {
+  font-family: SometimesBold;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/public/fonts/SometimesTimesTRIAL-Bold.otf');
+}
+
+@font-face {
+  font-family: SometimesMedium;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/public/fonts/SometimesTimesTRIAL-Medium.otf');
+}
+
+@font-face {
+  font-family: SometimesLight;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('/public/fonts/SometimesTimesTRIAL-Light.otf');
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Pretendard;
   margin: 0;
   padding: 0;
 }
