@@ -58,6 +58,25 @@
   src: url('/fonts/SometimesTimesTRIAL-Light.otf');
 }
 
+@keyframes snowflake-fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes snowflake-shake {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+}
+
 *,
 *::before,
 *::after {
