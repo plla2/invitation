@@ -29,6 +29,9 @@ const config: Config = {
         SometimesLight: ['SometimesLight'],
         Pretendard: ['Pretendard'],
       },
+      animation: {
+        snow: 'snowflake-fall 10s linear infinite running, snowflake-shake 3s ease-in-out infinite running',
+      },
     },
   },
   plugins: [],
