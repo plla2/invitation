@@ -27,6 +27,7 @@ const config: Config = {
         SometimesBold: ['SometimesBold'],
         SometimesMedium: ['SometimesMedium'],
         SometimesLight: ['SometimesLight'],
+        Pretendard: ['Pretendard'],
       },
     },
   },
