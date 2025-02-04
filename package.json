@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/basic": "^3.8.1",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/updater-wobble": "^3.8.1",
     "aos": "^2.3.4",
     "dayjs": "^1.11.13",
     "motion": "^12.0.11",
