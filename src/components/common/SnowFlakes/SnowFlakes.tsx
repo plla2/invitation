@@ -39,7 +39,7 @@ export default function Snowflakes({ count }: SnowflakesProps) {
   }, []);
 
   return (
-    <div className="absolute z-50 left-0 top-0 w-full h-[650px] overflow-hidden" aria-hidden="true">
+    <div className="absolute z-50 left-0 top-0 w-full h-[750px] overflow-hidden" aria-hidden="true">
       {snowflake.map((flake, index) => (
         <div
           key={`flake-${index}`}
