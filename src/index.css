@@ -80,11 +80,12 @@
 #tsparticles {
   height: 100%;
   position: absolute;
+  width: 100%;
+  max-width: 430px;
   left: 0;
-  right: 0;
   top: 0;
   z-index: 30;
-  max-height: 650px;
+  max-height: 750px;
 }
 
 *,

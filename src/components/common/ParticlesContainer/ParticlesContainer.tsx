@@ -1,4 +1,4 @@
-import { Engine, tsParticles } from '@tsparticles/engine';
+import { Engine } from '@tsparticles/engine';
 import { loadBasic } from '@tsparticles/basic';
 import { loadWobbleUpdater } from '@tsparticles/updater-wobble';
 import { options } from '@/components/common/ParticlesContainer/options';
@@ -14,13 +14,6 @@ const ParticlesContainer = () => {
       await loadWobbleUpdater(engine, false);
       await engine.addPreset('snow', options, false);
       await engine.refresh(refresh);
-
-      await tsParticles.load({
-        id: 'tsparticles',
-        options: {
-          preset: 'snow',
-        },
-      });
     }).then(() => {
       setInit(true);
     });
