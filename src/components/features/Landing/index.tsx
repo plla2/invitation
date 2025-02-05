@@ -34,15 +34,36 @@ const Landing = () => {
     return () => clearTimeout(timer2);
   }, []);
 
+  useEffect(() => {
+    if (showOverlay) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showOverlay]);
+
   return (
-    <div className="min-h-[750px] w-full relative text-white-100">
-      <img
+    <div className="min-h-[750px] w-full h-full relative text-white-100 -mt-7">
+      {/* <div className="absolute w-full h-full bg-[url('/images/landing-image2.jpg')] bg-no-repeat bg-cover bg-center before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-red-600"></div> */}
+      {/* <div className="relative w-full h-full"> */}
+      {/* 배경 이미지 */}
+      <div className="absolute inset-0 bg-[url('/images/landing.jpg')] bg-no-repeat bg-cover bg-center"></div>
+
+      {/* 바깥쪽 그라디언트 */}
+      <div className="absolute left-0 -bottom-[200px] w-full h-[200px] bg-gradient-to-t from-transparent to-black-100/50"></div>
+      {/* </div> */}
+
+      {/* <img
         className="absolute w-full h-full object-cover"
         src="/images/landing-image2.jpg"
         alt="랜딩사진"
         decoding="async"
         fetchPriority="high"
-      />
+      /> */}
 
       <AnimatePresence mode="wait">
         {isVisible && (
@@ -67,10 +88,10 @@ const Landing = () => {
       </AnimatePresence>
       <AnimatePresence>
         <motion.div initial="hidden" animate="visible" variants={fadeUpVariant}>
-          <span className="text-3xl w-full break-all absolute z-20 top-[70px] text-center font-SometimesLight font-light">
+          <span className="text-3xl w-full break-all absolute z-20 top-28 text-center font-SometimesLight font-light">
             GUNWOO & HYUNHEE
           </span>
-          <div className="flex gap-[120px] justify-center text-sm w-full break-all absolute z-20 top-[110px] text-center font-Pretendard font-normal">
+          <div className="flex gap-[120px] justify-center text-sm w-full break-all absolute z-20 top-40 text-center font-Pretendard font-normal">
             <div className="flex gap-1">
               <span>신랑</span>
               <span>정건우</span>
@@ -86,7 +107,7 @@ const Landing = () => {
           initial="hidden"
           animate="visible"
           variants={fadeDownVariant}
-          className="flex flex-col gap-2 text-lg font-light absolute w-full break-all z-20 text-center items-center tracking-wide font-Pretendard bottom-12"
+          className="flex flex-col gap-2 text-lg font-light absolute w-full break-all z-20 text-center items-center tracking-wide font-Pretendard bottom-10"
         >
           <div className="flex gap-2 items-center">
             <span>2025. 02. 04. Tue</span>
