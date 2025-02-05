@@ -1,5 +1,5 @@
-import { loadSnowPreset } from '@/components/common/ParticlesContainer/ParticlesContainer';
-import { tsParticles } from '@tsparticles/engine';
+import ParticlesContainer from '@/components/common/ParticlesContainer/ParticlesContainer';
+import Snowflakes from '@/components/common/SnowFlakes/SnowFlakes';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { AnimatePresence, motion } from 'motion/react';
@@ -7,25 +7,12 @@ import { useEffect, useState } from 'react';
 import { ReactTyped } from 'react-typed';
 
 const Landing = () => {
+  const [showOverlay, setShowOverlay] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
+
   useEffect(() => {
     Aos.init();
   }, []);
-
-  useEffect(() => {
-    (async () => {
-      await loadSnowPreset(tsParticles);
-
-      await tsParticles.load({
-        id: 'tsparticles',
-        options: {
-          preset: 'snow',
-        },
-      });
-    })();
-  }, []);
-
-  const [showOverlay, setShowOverlay] = useState(true);
-  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(false), 8000);
@@ -42,6 +29,7 @@ const Landing = () => {
   return (
     <div className="min-h-[650px] w-full relative text-white-100">
       {/* <Snowflakes count={18} /> */}
+      <ParticlesContainer />
       <img
         className="absolute w-full h-full"
         src="/images/landing-image2.jpg"

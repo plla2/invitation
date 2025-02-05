@@ -1,18 +1,34 @@
-import type { Engine } from '@tsparticles/engine';
+import { Engine, tsParticles } from '@tsparticles/engine';
 import { loadBasic } from '@tsparticles/basic';
 import { loadWobbleUpdater } from '@tsparticles/updater-wobble';
 import { options } from '@/components/common/ParticlesContainer/options';
+import { useEffect, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 
-/**
- *
- * @param engine -
- * @param refresh -
- */
-export async function loadSnowPreset(engine: Engine, refresh = true): Promise<void> {
-  await loadBasic(engine, false);
-  await loadWobbleUpdater(engine, false);
+const ParticlesContainer = () => {
+  const [init, setInit] = useState(false);
 
-  await engine.addPreset('snow', options, false);
+  useEffect(() => {
+    initParticlesEngine(async (engine: Engine, refresh = true) => {
+      await loadBasic(engine);
+      await loadWobbleUpdater(engine, false);
+      await engine.addPreset('snow', options, false);
+      await engine.refresh(refresh);
 
-  await engine.refresh(refresh);
-}
+      await tsParticles.load({
+        id: 'tsparticles',
+        options: {
+          preset: 'snow',
+        },
+      });
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  if (init) {
+    return <Particles id="tsparticles" options={options} />;
+  }
+};
+
+export default ParticlesContainer;
