@@ -1,6 +1,5 @@
-import ParticlesContainer from '@/components/common/ParticlesContainer/ParticlesContainer';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ReactTyped } from 'react-typed';
 
 const fadeUpVariant = {
@@ -14,7 +13,7 @@ const fadeDownVariant = {
 };
 
 const Landing = () => {
-  const MemoizedParticles = useMemo(() => <ParticlesContainer />, []);
+  // const MemoizedParticles = useMemo(() => <ParticlesContainer />, []);
   const [showOverlay, setShowOverlay] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -34,37 +33,38 @@ const Landing = () => {
     return () => clearTimeout(timer2);
   }, []);
 
-  useEffect(() => {
-    if (showOverlay) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+  // useEffect(() => {
+  //   if (showOverlay) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = '';
+  //   }
 
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [showOverlay]);
+  //   return () => {
+  //     document.body.style.overflow = '';
+  //   };
+  // }, [showOverlay]);
 
   return (
     <div className="min-h-[750px] w-full h-full relative text-white-100 -mt-7">
-      {/* <div className="absolute w-full h-full bg-[url('/images/landing-image2.jpg')] bg-no-repeat bg-cover bg-center before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-red-600"></div> */}
-      {/* <div className="relative w-full h-full"> */}
-      {/* 배경 이미지 */}
-      <div className="absolute inset-0 bg-[url('/images/landing.jpg')] bg-no-repeat bg-cover bg-center"></div>
-
-      {/* 바깥쪽 그라디언트 */}
-      <div className="absolute left-0 -bottom-[200px] w-full h-[200px] bg-gradient-to-t from-transparent to-black-100/50"></div>
-      {/* </div> */}
-
-      {/* <img
+      {/* <Snowflakes count={20} /> */}
+      <img
         className="absolute w-full h-full object-cover"
         src="/images/landing-image2.jpg"
         alt="랜딩사진"
         decoding="async"
         fetchPriority="high"
-      /> */}
-
+      />
+      <video
+        className="w-full h-[750px] object-cover mix-blend-screen"
+        autoPlay
+        muted
+        loop
+        poster="/images/snow.webm"
+        data-v-635f8c60=""
+      >
+        <source src="/images/snow.webm" data-v-635f8c60="" />
+      </video>
       <AnimatePresence mode="wait">
         {isVisible && (
           <motion.div
@@ -116,7 +116,8 @@ const Landing = () => {
           <span>가나다라마바사아자차카타파하</span>
         </motion.div>
       </AnimatePresence>
-      <AnimatePresence mode="wait">
+      /* 잠시 오프닝 주석처리 */
+      {/* <AnimatePresence mode="wait">
         {showOverlay && (
           <motion.div
             className="absolute inset-0 min-h-dvh flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
@@ -149,8 +150,8 @@ const Landing = () => {
             </motion.h1>
           </motion.div>
         )}
-      </AnimatePresence>
-      {MemoizedParticles}
+      </AnimatePresence> */}
+      {/* {MemoizedParticles} */}
     </div>
   );
 };
