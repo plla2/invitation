@@ -12,6 +12,7 @@
   "dependencies": {
     "@tsparticles/basic": "^3.8.1",
     "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
     "@tsparticles/updater-wobble": "^3.8.1",
     "aos": "^2.3.4",
     "dayjs": "^1.11.13",
