@@ -15,6 +15,9 @@ export const colors = {
     400: '#F8FAFC',
     500: '#7ba2c7',
   },
+  holiday: {
+    100: '#f79e9e',
+  },
   test: {
     100: '#A3BEDC',
     200: '#5E8EB4 ',
