@@ -70,14 +70,14 @@ const Inviting = () => {
             ))}
           </motion.div>
         ))}
-        <div className="mx-12 rounded-md">
+        <motion.div variants={fadeInUp} className="mx-12 rounded-md">
           <img
             className="w-full h-full object-cover rounded-md"
             src="/images/invite.jpg"
             alt="초대사진"
             decoding="async"
           />
-        </div>
+        </motion.div>
       </motion.div>
 
       <motion.div className="flex flex-col gap-10 font-GowunDodum font-semibold">
