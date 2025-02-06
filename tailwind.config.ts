@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors,
-      textColor: {},
+      borderColor: colors,
+      textColor: colors,
       translate: {
         '-1/2': '-50%',
       },
@@ -28,6 +29,8 @@ const config: Config = {
         SometimesMedium: ['SometimesMedium'],
         SometimesLight: ['SometimesLight'],
         Pretendard: ['Pretendard'],
+        GowunDodum: ['GowunDodum'],
+        Jakarta: ['Jakarta'],
       },
       animation: {
         snow: 'snowflake-fall 10s linear infinite running, snowflake-shake 3s ease-in-out infinite running',
