@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { ImgHTMLAttributes, useEffect, useState } from 'react';
 import { ReactTyped } from 'react-typed';
 
 const fadeUpVariant = {
@@ -10,6 +10,14 @@ const fadeUpVariant = {
 const fadeDownVariant = {
   hidden: { opacity: 0, y: -30, transition: { duration: 1, ease: 'easeIn', delay: 1 } },
   visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeIn' } },
+};
+
+interface ExtendedImgProps extends ImgHTMLAttributes<HTMLImageElement> {
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const CustomImage: React.FC<ExtendedImgProps> = (props) => {
+  return <img {...props} />;
 };
 
 const Landing = () => {
@@ -33,27 +41,27 @@ const Landing = () => {
     return () => clearTimeout(timer2);
   }, []);
 
-  // useEffect(() => {
-  //   if (showOverlay) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = '';
-  //   }
+  useEffect(() => {
+    if (showOverlay) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+    }
 
-  //   return () => {
-  //     document.body.style.overflow = '';
-  //   };
-  // }, [showOverlay]);
+    return () => {
+      document.documentElement.style.overflow = '';
+    };
+  }, [showOverlay]);
 
   return (
     <div className="min-h-[750px] w-full h-full relative text-white-100 -mt-7">
       {/* <Snowflakes count={20} /> */}
-      <img
+      <CustomImage
         className="absolute w-full h-full object-cover"
         src="/images/landing-image2.jpg"
         alt="랜딩사진"
         decoding="async"
-        fetchPriority="high"
+        fetchpriority="high"
       />
       <video
         className="w-full h-[750px] object-cover mix-blend-screen"
@@ -117,8 +125,8 @@ const Landing = () => {
           </motion.div>
         </motion.div>
       </AnimatePresence>
-      /* 잠시 오프닝 주석처리 */
-      {/* <AnimatePresence mode="wait">
+      {/* 잠시 오프닝 주석처리 */}
+      <AnimatePresence mode="wait">
         {showOverlay && (
           <motion.div
             className="absolute inset-0 min-h-dvh flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
@@ -151,7 +159,7 @@ const Landing = () => {
             </motion.h1>
           </motion.div>
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
       {/* {MemoizedParticles} */}
     </div>
   );
