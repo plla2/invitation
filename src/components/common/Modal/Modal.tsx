@@ -38,7 +38,7 @@ const Modal = ({ children, onDismiss }: Props) => {
       onClick={onClick}
     >
       <div
-        className="bg-blue-50 shadow-xl px-4 py-6 flex flex-col items-center rounded-md w-[300px] relative"
+        className="bg-white-200 shadow-xl px-4 py-10 flex flex-col items-center rounded-md w-[350px] relative"
         ref={wrapper}
         onClick={(e) => e.stopPropagation()}
       >
