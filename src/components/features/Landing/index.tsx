@@ -87,33 +87,34 @@ const Landing = () => {
         )}
       </AnimatePresence>
       <AnimatePresence>
-        <motion.div initial="hidden" animate="visible" variants={fadeUpVariant}>
-          <span className="text-3xl w-full break-all absolute z-20 top-28 text-center font-SometimesLight font-light">
-            GUNWOO & HYUNHEE
-          </span>
-          <div className="flex gap-[120px] justify-center text-sm w-full break-all absolute z-20 top-40 text-center font-Pretendard font-normal">
-            <div className="flex gap-1">
-              <span>신랑</span>
-              <span>정건우</span>
+        <motion.div initial="hidden" animate="visible">
+          <motion.div
+            variants={fadeUpVariant}
+            className="flex flex-col absolute z-20 top-28 text-center break-all font-SometimesLight font-light text-3xl w-full"
+          >
+            <span>GUNWOO & HYUNHEE</span>
+            <div className="flex gap-12 justify-center text-sm w-full break-all absolute z-20 top-12 text-center font-Pretendard font-normal">
+              <div className="flex gap-1">
+                <span>신랑</span>
+                <span>정건우</span>
+              </div>
+              <span className="font-Jakarta">and</span>
+              <div className="flex gap-1">
+                <span>신부</span>
+                <span>박현희</span>
+              </div>
             </div>
-            <div className="flex gap-1">
-              <span>신부</span>
-              <span>박현희</span>
+          </motion.div>
+          <motion.div
+            variants={fadeDownVariant}
+            className="flex flex-col gap-2 text-lg font-light absolute w-full break-all z-20 text-center items-center tracking-wide font-Pretendard bottom-10"
+          >
+            <div className="flex gap-2 items-center">
+              <span>2025. 02. 04. Tue</span>
+              <span>13:00</span>
             </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeDownVariant}
-          className="flex flex-col gap-2 text-lg font-light absolute w-full break-all z-20 text-center items-center tracking-wide font-Pretendard bottom-10"
-        >
-          <div className="flex gap-2 items-center">
-            <span>2025. 02. 04. Tue</span>
-            <span>13:00</span>
-          </div>
-          <span>가나다라마바사아자차카타파하</span>
+            <span>가나다라마바사아자차카타파하</span>
+          </motion.div>
         </motion.div>
       </AnimatePresence>
       /* 잠시 오프닝 주석처리 */
