@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import Call from '@/components/common/Icon/Call';
 import Modal from '@/components/common/Modal/Modal';
 import Xmark from '@/components/common/Icon/Xmark';
-import Message from '@/components/common/Icon/Message';
+import Tab from '@/components/common/Tab/Tab';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -72,26 +72,36 @@ const Inviting = () => {
         ))}
       </motion.div>
 
-      <motion.div className="flex flex-col gap-6 font-GowunDodum font-semibold">
+      <motion.div className="flex flex-col gap-10 font-GowunDodum font-semibold">
         <motion.div
-          className="flex gap-6 justify-center items-center mt-3"
+          className="flex flex-col gap-2 justify-center mt-3"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.5 } }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <motion.span initial={{ x: -50 }} animate={{ x: 0 }} transition={{ delay: 0.3 }}>
+          <div className="w-full grid grid-cols-[1fr_0.5fr_1fr] gap-1 font-GowunDodum font-medium">
+            <span className="text-black-200 font-semibold">아버지 &#8226; 어머니</span>
+            <span className="text-black-200">의 아들</span>
+            <span className="text-black-200 font-semibold text-center">정건우</span>
+          </div>
+          <div className="w-full grid grid-cols-[1fr_0.5fr_1fr] gap-1 font-GowunDodum font-medium">
+            <span className="text-black-200 font-semibold">아버지 &#8226; 어머니</span>
+            <span className="text-black-200">의 딸</span>
+            <span className="text-black-200 font-semibold text-center">박현희</span>
+          </div>
+          {/* <motion.span initial={{ x: -50 }} animate={{ x: 0 }} transition={{ delay: 0.3 }}>
             신랑 정건우
           </motion.span>
           <span>&#8226;</span>
           <motion.span initial={{ x: 50 }} animate={{ x: 0 }} transition={{ delay: 0.3 }}>
             신부 박현희
-          </motion.span>
+          </motion.span> */}
         </motion.div>
         <motion.button
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.5 } }}
           viewport={{ once: true, amount: 0.2 }}
-          className="flex justify-center items-center text-blue-500 gap-2 border border-blue-200 bg-blue-300 py-[6px] rounded-lg"
+          className="flex justify-center items-center text-blue-500 gap-2 border border-blue-200 bg-blue-300 py-2 rounded-lg"
           onClick={handleModal}
         >
           <Call size={14} />
@@ -115,27 +125,27 @@ const Inviting = () => {
                 <span className="font-SometimesBold font-semibold text-xs tracking-widest text-test-100">CONTACT</span>
                 <span className="font-semibold text-blue-500 tracking-widest">연락하기</span>
               </div>
-              <div className="w-full mb-8">
+              {/* <div className="w-full mb-9">
                 <p className="w-full border-b border-blue-500 pb-1 text-sm text-blue-500">신랑측 연락처</p>
-                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-4">
+                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-5">
                   <span className="text-sm text-blue-500">신랑</span>
-                  <span className="text-test-200 font-semibold">정건우</span>
+                  <span className="font-semibold text-test-400">정건우</span>
                   <div className="flex items-center gap-3">
                     <Call size={20} />
                     <Message size={20} />
                   </div>
                 </div>
-                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-4">
+                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-5">
                   <span className="text-sm text-blue-500">신랑 아버지</span>
-                  <span className="text-test-200 font-semibold">아버지</span>
+                  <span className="text-test-400 font-semibold">아버지</span>
                   <div className="flex items-center gap-3">
                     <Call size={20} />
                     <Message size={20} />
                   </div>
                 </div>
-                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-4">
+                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-5">
                   <span className="text-sm text-blue-500">신랑 어머니</span>
-                  <span className="text-test-200 font-semibold">어머니</span>
+                  <span className="text-test-400 font-semibold">어머니</span>
                   <div className="flex items-center gap-3">
                     <Call size={20} />
                     <Message size={20} />
@@ -144,31 +154,32 @@ const Inviting = () => {
               </div>
               <div className="w-full">
                 <p className="w-full border-b border-blue-500 pb-1 text-sm text-blue-500">신부측 연락처</p>
-                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-4">
+                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-5">
                   <span className="text-sm text-blue-500 w-[66.5px]">신부</span>
-                  <span className="text-test-200 font-semibold">박현희</span>
+                  <span className="text-test-400 font-semibold">박현희</span>
                   <div className="flex items-center gap-3">
                     <Call size={20} />
                     <Message size={20} />
                   </div>
                 </div>
-                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-4">
+                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-5">
                   <span className="text-sm text-blue-500">신부 아버지</span>
-                  <span className="text-test-200 font-semibold">아버지</span>
+                  <span className="text-test-400 font-semibold">아버지</span>
                   <div className="flex items-center gap-3">
                     <Call size={20} />
                     <Message size={20} />
                   </div>
                 </div>
-                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-4">
+                <div className="grid grid-cols-[1fr_1fr_auto] gap-2 items-center px-2 my-5">
                   <span className="text-sm text-blue-500">신부 어머니</span>
-                  <span className="text-test-200 font-semibold">어머니</span>
+                  <span className="text-test-400 font-semibold">어머니</span>
                   <div className="flex items-center gap-3">
                     <Call size={20} />
                     <Message size={20} />
                   </div>
                 </div>
-              </div>
+              </div> */}
+              <Tab />
             </Modal>
           </motion.aside>
         )}
