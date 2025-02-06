@@ -58,6 +58,22 @@
   src: url('/fonts/SometimesTimesTRIAL-Light.otf');
 }
 
+@font-face {
+  font-family: GowunDodum;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/GowunDodum-Regular.ttf');
+}
+
+@font-face {
+  font-family: Jakarta;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Jakarta-Signature.woff');
+}
+
 @keyframes snowflake-fall {
   0% {
     top: -10%;
