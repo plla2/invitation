@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import Masonry from 'react-masonry-css';
 import { AnimatePresence, motion } from 'framer-motion';
 import ChevronDown from '@/components/common/Icon/ChevronDown';
@@ -23,9 +23,12 @@ const images = [
   '/gallery/image11.jpg',
 ];
 
-const Gallery = () => {
+interface Props {
+  modalOpen: boolean;
+  setModalOpen: Dispatch<SetStateAction<boolean>>;
+}
+const Gallery = ({ modalOpen, setModalOpen }: Props) => {
   const [showAll, setShowAll] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
 
   const handleShowAll = () => {
@@ -41,21 +44,9 @@ const Gallery = () => {
     setModalOpen(false);
   };
 
-  useEffect(() => {
-    if (modalOpen) {
-      document.documentElement.style.overflow = 'hidden';
-    } else {
-      document.documentElement.style.overflow = '';
-    }
-
-    return () => {
-      document.documentElement.style.overflow = '';
-    };
-  }, [modalOpen]);
-
   return (
     <motion.div
-      className="py-28 flex flex-col items-center w-full relative bg-white-300"
+      className="pt-28 pb-20 flex flex-col items-center w-full relative bg-white-300"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
       viewport={{ once: true, amount: 0.3 }}

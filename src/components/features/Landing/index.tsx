@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { ImgHTMLAttributes, useEffect, useState } from 'react';
+import { Dispatch, ImgHTMLAttributes, SetStateAction, useEffect, useState } from 'react';
 import { ReactTyped } from 'react-typed';
 
 const fadeUpVariant = {
@@ -20,9 +20,13 @@ const CustomImage: React.FC<ExtendedImgProps> = (props) => {
   return <img {...props} />;
 };
 
-const Landing = () => {
+interface Props {
+  showOverlay: boolean;
+  setShowOverlay: Dispatch<SetStateAction<boolean>>;
+}
+
+const Landing = ({ showOverlay, setShowOverlay }: Props) => {
   // const MemoizedParticles = useMemo(() => <ParticlesContainer />, []);
-  const [showOverlay, setShowOverlay] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -40,18 +44,6 @@ const Landing = () => {
 
     return () => clearTimeout(timer2);
   }, []);
-
-  useEffect(() => {
-    if (showOverlay) {
-      document.documentElement.style.overflow = 'hidden';
-    } else {
-      document.documentElement.style.overflow = '';
-    }
-
-    return () => {
-      document.documentElement.style.overflow = '';
-    };
-  }, [showOverlay]);
 
   return (
     <div className="min-h-[750px] w-full h-full relative text-white-100 -mt-7">
