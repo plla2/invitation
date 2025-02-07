@@ -1,9 +1,9 @@
-'use client';
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Masonry from 'react-masonry-css';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import ChevronDown from '@/components/common/Icon/ChevronDown';
+import SwiperContainer from '@/components/common/Swiper/Swiper';
+import Xmark from '@/components/common/Icon/Xmark';
 
 const breakpointColumnsObj = {
   default: 2,
@@ -25,10 +25,33 @@ const images = [
 
 const Gallery = () => {
   const [showAll, setShowAll] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
 
   const handleShowAll = () => {
     setShowAll(true);
   };
+
+  const handleImageClick = (index: number) => {
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+    }
+
+    return () => {
+      document.documentElement.style.overflow = '';
+    };
+  }, [modalOpen]);
 
   return (
     <motion.div
@@ -60,10 +83,11 @@ const Gallery = () => {
                 key={index}
                 src={src}
                 alt={`image-${index}`}
-                className="w-full mb-4 rounded-lg shadow-md"
+                className="w-full mb-4 rounded-lg shadow-md cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: (index - 3) * 0.1, duration: 0.4 }}
+                onClick={() => handleImageClick(index)}
               />
             ))}
           </Masonry>
@@ -77,20 +101,35 @@ const Gallery = () => {
           onClick={handleShowAll}
           className="font-GowunDodum px-4 py-2 text-blue-500 flex items-center justify-center gap-1"
           initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            // y: [0, -4, 0],
-          }}
-          // transition={{
-          //   duration: 1,
-          //   repeat: Infinity,
-          //   repeatType: 'reverse',
-          // }}
+          animate={{ opacity: 1 }}
         >
           <span>더보기</span>
           <ChevronDown size={16} color="#7ba2c7" />
         </motion.button>
       )}
+
+      <AnimatePresence mode="wait">
+        {modalOpen && currentImageIndex !== null && (
+          <motion.div
+            className="fixed top-0 left-0 right-0 bottom-0 bg-black-100 bg-opacity-70 flex items-center justify-center z-50 h-screen"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+          >
+            <div className="relative rounded-lg w-full h-full">
+              <motion.div
+                className="absolute top-5 right-5 cursor-pointer z-50 mb:top-3 mb:right-3"
+                onClick={handleCloseModal}
+                whileTap={{ scale: 0.8 }}
+              >
+                <Xmark size={30} color="#EFEFEF" />
+              </motion.div>
+              <SwiperContainer currentImageIndex={currentImageIndex} />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
