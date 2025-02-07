@@ -24,7 +24,7 @@ const Header = () => {
       </audio>
       <div
         onClick={() => setIsPlaying(!isPlaying)}
-        className="w-7 h-7 flex justify-center items-center bg-white-300 rounded-full overflow-hidden cursor-pointer"
+        className="w-7 h-7 flex justify-center items-center bg-blue-200 rounded-full overflow-hidden cursor-pointer"
       >
         <AnimatePresence mode="wait">
           {!isPlaying ? (
