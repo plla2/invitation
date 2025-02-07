@@ -39,6 +39,9 @@ const config: Config = {
       animation: {
         snow: 'snowflake-fall 10s linear infinite running, snowflake-shake 3s ease-in-out infinite running',
       },
+      screens: {
+        mb: { max: '389px' },
+      },
     },
   },
   plugins: [],
