@@ -127,7 +127,7 @@ const Inviting = () => {
           >
             <Modal setModalOpen={setModalOpen} onDismiss={onDismiss}>
               <motion.button className="absolute right-3 top-3" onClick={onDismiss}>
-                <Xmark />
+                <Xmark size={20} color="#7ba2c7" />
               </motion.button>
               <div className="flex flex-col gap-1 items-center mb-8">
                 <span className="font-SometimesBold font-semibold text-xs tracking-widest text-test-100">CONTACT</span>
