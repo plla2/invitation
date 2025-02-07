@@ -1,6 +1,7 @@
 import Call from '@/components/common/Icon/Call';
 import Copy from '@/components/common/Icon/Copy';
 import KakaoMap from '@/components/common/Kakao/KakaoMap';
+import NavigationButtons from '@/components/common/NavigationButtons/NavigationButtons';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -10,7 +11,7 @@ const fadeInUp = {
 
 const Location = () => {
   return (
-    <div className="flex flex-col items-center py-28">
+    <div className="flex flex-col items-center py-28 bg-blue-300 px-4">
       <motion.div className="flex flex-col gap-2 justify-center items-center text-blue-500 mb-10" variants={fadeInUp}>
         <span className="font-SometimesBold font-semibold tracking-wider text-test-100">LOCATION</span>
         <span className="font-GowunDodum font-semibold text-lg">오시는 길</span>
@@ -26,8 +27,16 @@ const Location = () => {
         </div>
         <span className="text-black-200 text-xs">Tel. 02-0000-0000</span>
       </div>
-      <div className="flex w-full justify-center my-6 px-3">
+      <div className="flex w-full justify-center mt-12 mb-14">
         <KakaoMap />
+      </div>
+      <div className="flex flex-col w-full px-3 font-GowunDodum gap-5 mb-10">
+        <div className="flex flex-col gap-2">
+          <span className="font-semibold mb-2">내비게이션</span>
+          <span>사용하실 앱을 선택하시면 길안내가 시작됩니다.</span>
+          <span className="text-black-200 text-xs">* 앱이 설치되어 있지 않을 경우 앱설치 페이지로 이동합니다.</span>
+        </div>
+        <NavigationButtons />
       </div>
     </div>
   );
