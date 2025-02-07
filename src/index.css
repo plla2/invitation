@@ -104,6 +104,18 @@
   max-height: 750px;
 }
 
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.custom-pagination {
+  color: #fefefe !important;
+  font-size: 18px !important;
+  gap: 6px !important;
+  width: unset !important;
+}
+
 *,
 *::before,
 *::after {
