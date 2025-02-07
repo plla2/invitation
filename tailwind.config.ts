@@ -21,6 +21,10 @@ const config: Config = {
       transitionProperty: {
         colors: 'color, background-color, border-color, text-decoration-color',
       },
+      backgroundImage: {
+        'custom-fade':
+          'linear-gradient(0deg, rgba(239, 239, 239, 1) 0%, rgba(239, 239, 239, 0.55) 60%, rgba(239, 239, 239, 0.5) 73%, rgba(239, 239, 239, 0.25) 83%, rgba(239, 239, 239, 0.15) 100%)',
+      },
       fontFamily: {
         GmarketBold: ['GmarketBold'],
         GmarketMedium: ['GmarketMedium'],
