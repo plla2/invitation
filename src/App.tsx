@@ -1,5 +1,6 @@
 import { AppLayout } from '@/components/common/AppLayout';
 import Header from '@/components/common/Header';
+import Account from '@/components/features/Account/Account';
 import Gallery from '@/components/features/Gallery/Gallery';
 import Inviting from '@/components/features/Inviting/Inviting';
 import Landing from '@/components/features/Landing';
@@ -34,6 +35,7 @@ const App = () => {
       <WeddingDay />
       <Gallery modalOpen={modalOpen} setModalOpen={setModalOpen} />
       <Location />
+      <Account />
     </AppLayout>
   );
 };

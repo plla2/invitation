@@ -14,7 +14,7 @@ const fadeInUp = {
 
 const Location = () => {
   return (
-    <div className="flex flex-col items-center py-28 bg-blue-300 px-4">
+    <div className="flex flex-col items-center pt-28 pb-20 bg-blue-300 px-4">
       <motion.div className="flex flex-col gap-2 justify-center items-center text-blue-500 mb-10" variants={fadeInUp}>
         <span className="font-SometimesBold font-semibold tracking-wider text-test-100">LOCATION</span>
         <span className="font-GowunDodum font-semibold text-lg">오시는 길</span>
