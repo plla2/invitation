@@ -12,6 +12,7 @@ const config: Config = {
       colors,
       borderColor: colors,
       textColor: colors,
+      backgroundColor: colors,
       translate: {
         '-1/2': '-50%',
       },
