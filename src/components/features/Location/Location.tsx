@@ -1,6 +1,9 @@
 import Call from '@/components/common/Icon/Call';
 import Copy from '@/components/common/Icon/Copy';
 import KakaoMap from '@/components/common/Kakao/KakaoMap';
+import LocationBus from '@/components/common/LocationWays/LocationBus';
+import LocationCar from '@/components/common/LocationWays/LocationCar';
+import LocationSubway from '@/components/common/LocationWays/LocationSubway';
 import NavigationButtons from '@/components/common/NavigationButtons/NavigationButtons';
 import { motion } from 'framer-motion';
 
@@ -30,13 +33,22 @@ const Location = () => {
       <div className="flex w-full justify-center mt-12 mb-14">
         <KakaoMap />
       </div>
-      <div className="flex flex-col w-full px-3 font-GowunDodum gap-5 mb-10">
+      <div className="flex flex-col w-full px-3 font-GowunDodum gap-5">
         <div className="flex flex-col gap-2">
           <span className="font-semibold mb-2">내비게이션</span>
           <span>사용하실 앱을 선택하시면 길안내가 시작됩니다.</span>
           <span className="text-black-200 text-xs">* 앱이 설치되어 있지 않을 경우 앱설치 페이지로 이동합니다.</span>
         </div>
         <NavigationButtons />
+      </div>
+      <div className="w-full px-3 py-10 border-b border-blue-100">
+        <LocationCar />
+      </div>
+      <div className="w-full px-3 py-10 border-b border-blue-100">
+        <LocationSubway />
+      </div>
+      <div className="w-full px-3 py-10 border-b border-blue-100">
+        <LocationBus />
       </div>
     </div>
   );
