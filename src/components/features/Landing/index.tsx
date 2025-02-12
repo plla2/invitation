@@ -46,7 +46,7 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
   }, []);
 
   return (
-    <div className="min-h-[750px] w-full h-full relative text-white-100 -mt-7">
+    <div className="min-h-[850px] w-full h-full relative text-white-100 -mt-7">
       {/* <Snowflakes count={20} /> */}
       <CustomImage
         className="absolute w-full h-full object-cover"
@@ -56,7 +56,7 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
         fetchpriority="high"
       />
       <video
-        className="w-full h-[750px] object-cover mix-blend-screen"
+        className="w-full h-[850px] object-cover mix-blend-screen"
         autoPlay
         muted
         loop
@@ -121,7 +121,7 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
       <AnimatePresence mode="wait">
         {showOverlay && (
           <motion.div
-            className="absolute inset-0 min-h-dvh flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
+            className="absolute inset-0 min-h-[850px] flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
