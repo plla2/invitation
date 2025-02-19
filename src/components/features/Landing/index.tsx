@@ -46,7 +46,7 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
   }, []);
 
   return (
-    <div className="min-h-[850px] w-full h-full relative text-white-100 -mt-7">
+    <div className="min-h-dvh w-full h-full relative text-white-100">
       {/* <Snowflakes count={20} /> */}
       <CustomImage
         className="absolute w-full h-full object-cover"
