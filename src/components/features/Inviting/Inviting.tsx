@@ -71,12 +71,7 @@ const Inviting = () => {
           </motion.div>
         ))}
         <motion.div variants={fadeInUp} className="mx-12 rounded-md">
-          <img
-            className="w-full h-full object-cover rounded-md"
-            src="/images/invite.jpg"
-            alt="초대사진"
-            decoding="async"
-          />
+          <img className="w-full h-full object-cover rounded-md" src="/invite.jpg" alt="초대사진" decoding="async" />
         </motion.div>
       </motion.div>
 
