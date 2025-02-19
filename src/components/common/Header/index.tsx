@@ -18,7 +18,7 @@ const Header = () => {
   }, [isPlaying, audioElement]);
 
   return (
-    <div className="fixed z-50 top-3 right-3 flex justify-end">
+    <div className="absolute z-50 top-3 right-3">
       <audio loop ref={audioElement} className="hidden pointer-events-none">
         <source src="/musics/back-music.mp3" type="audio/mp3" />
       </audio>
