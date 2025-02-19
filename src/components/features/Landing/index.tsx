@@ -57,11 +57,13 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
       />
       <video
         className="w-full h-[850px] object-cover mix-blend-screen"
-        autoPlay
+        controls
+        playsInline
+        webkit-playsinline
         muted
+        autoPlay
         loop
         poster="/images/snow.webm"
-        data-v-635f8c60=""
       >
         <source src="/images/snow.webm" data-v-635f8c60="" />
       </video>
