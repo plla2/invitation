@@ -57,7 +57,6 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
       />
       <video
         className="w-full h-[850px] object-cover mix-blend-screen"
-        controls
         playsInline
         webkit-playsinline
         muted

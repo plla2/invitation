@@ -15,7 +15,7 @@ const VideoSection = () => {
 
   return (
     <div className="flex w-20 h-20 justify-center items-center">
-      <video ref={videoRef} src="/images/flower.mp4" muted controls playsInline webkit-playsinline autoPlay />
+      <video ref={videoRef} src="/images/flower.mp4" muted playsInline webkit-playsinline autoPlay />
     </div>
   );
 };
