@@ -46,7 +46,7 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
   }, []);
 
   return (
-    <div className="min-h-dvh w-full h-full relative text-white-100">
+    <div className="min-h-svh w-full h-full relative text-white-100">
       {/* <Snowflakes count={20} /> */}
       <CustomImage
         className="absolute w-full h-full object-cover"
@@ -122,7 +122,7 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
       <AnimatePresence mode="wait">
         {showOverlay && (
           <motion.div
-            className="absolute inset-0 min-h-dvh flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
+            className="absolute inset-0 min-h-svh flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
