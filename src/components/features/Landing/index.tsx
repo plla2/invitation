@@ -122,7 +122,7 @@ const Landing = ({ showOverlay, setShowOverlay }: Props) => {
       <AnimatePresence mode="wait">
         {showOverlay && (
           <motion.div
-            className="absolute inset-0 min-h-[850px] flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
+            className="absolute inset-0 min-h-dvh flex items-center justify-center bg-black-100 bg-opacity-50 z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
